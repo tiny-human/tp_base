@@ -6,3 +6,10 @@ SELECT c.id AS commande, SUM(p.prix * cd.quantite) AS total FROM commande c
 JOIN commande_details cd ON cd.id_commande = c.id
 JOIN plat p ON p.id = cd.id_plat
 GROUP BY c.id;
+
+SELECT 
+    c.id AS commande,
+    c.date_commande,
+    COALESCE(cl.nom, 'client de passage') AS client
+FROM commande c
+LEFT JOIN client cl ON c.id_client = cl.id;
