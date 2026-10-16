@@ -1,1 +1,1 @@
-CARTE(**id**,plat,categorie,prix)
+Plat(**id**,plat,categorie,prix)
